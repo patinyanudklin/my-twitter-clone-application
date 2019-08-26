@@ -1,0 +1,14 @@
+mixin tweetsFeed(tweets)
+	- const tweetKeys = Object.keys(tweets)
+
+	- for(let i=0; i< tweetKeys.length; i+= 1)
+		- const tweetAcctStr = tweetKeys[i]
+		- const tweetAcct = tweets[tweetAcctStr]
+		
+		- for(let j=0; j< tweetAcct.length; j+= 1)
+			- const tweet = tweetAcct[j]
+			a(href=`/tweets/${tweet.id}`)
+				div.box(style="border-radius: 0px")
+					strong= tweetAcctStr 
+					small(style="padding-left:10px")= tweet.createdAt
+					div= tweet.tweet

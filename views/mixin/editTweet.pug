@@ -1,0 +1,13 @@
+mixin editTweet(id)
+	h1.title New Tweet
+	form(action=`/tweets/${id}/?_method=PUT`, method="POST")
+		.field
+			.control
+				input.input(name="tweet")
+		.field
+			.control
+				button.button.is-link.is-fullwidth(id="btn_savetweet") Save Tweet
+	form(action=`/tweets/${id}/?_method=DELETE`, method="POST")
+		.field
+			.control
+				button.button.is-danger.is-fullwidth(id="btn_deltweet") Delete Tweet

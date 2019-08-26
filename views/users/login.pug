@@ -1,0 +1,17 @@
+extends ../layout
+
+block title
+	='Twitter - Login'
+
+block content
+	h1.title Login
+		form(action="/users/session", method="POST")
+			.field
+				.control
+					input.input(name="username")
+			.field
+				.control
+					input.input(type="password", name="password")
+			.field
+				.control
+					button.button.is-link.is-fullwidth Login

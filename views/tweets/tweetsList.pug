@@ -1,0 +1,21 @@
+extends ../layout
+include ../mixin/tweetsFeed
+
+block title
+	='Twitter - List'
+
+block content
+	h1.title Tweet list
+	#search-box.field
+		form(action="/tweets/search", method="POST")
+			.field
+				.control
+					input.input(name="q")
+			.field
+				.control
+					button.button.is-link.is-fullwidth Search tweet
+		a(href=`/tweets/new`)
+			button.button.is-link.is-fullwidth Add new tweet
+	br
+	#list.div
+		+tweetsFeed(tweets)
