@@ -10,7 +10,7 @@ $(function(){
 	var input = $('[name="q"]')
 	
 	$('#search-box form').on('submit', function(event){
-		var url = 'http://localhost:3000/tweets/search'
+		var url = 'https://puppop.herokuapp.com/tweets/search'
 		var list = $('#list')
 		var q = input.val()
 		if(q) url = url + '?q=' + q

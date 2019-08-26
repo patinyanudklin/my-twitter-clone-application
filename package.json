@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "nodemon server.js",
-    "sequelize": "sequelize"
+    "start": "node server.js",
+    "sequelize": "sequelize",
+    "start:dev": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
