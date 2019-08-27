@@ -1,16 +1,19 @@
 $(function(){
 	var card = function(author, tweet){
 		return `
-		<div class="box" style="border-radius: 0px;">
-  			<strong> `+ author +` </strong>
-  			<small style="padding-left:10px;"> `+ tweet.createdAt +` </small>
-  			<div> `+ tweet.tweet +` </div>
-		</div>`
+		<a href=/tweets/`+ tweet.id +` id="list">
+			<div class="box" style="border-radius: 0px;">
+	  			<strong> `+ author +` </strong>
+	  			<small style="padding-left:10px;"> `+ tweet.createdAt +` </small>
+	  			<div> `+ tweet.tweet +` </div>
+			</div>
+		</a>`
 	}
 	var input = $('[name="q"]')
 	
 	$('#search-box form').on('submit', function(event){
 		var url = 'https://puppop.herokuapp.com/tweets/search'
+		//var url = 'http://localhost:3000/tweets/search'
 		var list = $('#list')
 		var q = input.val()
 		if(q) url = url + '?q=' + q
